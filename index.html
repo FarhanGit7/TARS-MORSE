@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TARS | Morse Translator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="stars"></div>
+
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-icon">T</div>
+            <div>
+                <h2>TARS</h2>
+                <p>DEEP SPACE COMMUNICATION</p>
+            </div>
+        </div>
+
+        <div class="system-status">
+            <span class="status-dot"></span>
+            SYSTEM ONLINE
+        </div>
+    </header>
+
+
+    <main class="main-container">
+
+        <section class="hero">
+            <p class="eyebrow">INTERSTELLAR TRANSMISSION NETWORK</p>
+
+            <h1>
+                MORSE CODE
+                <span>TRANSLATOR</span>
+            </h1>
+
+            <p class="hero-description">
+                Encode messages, decode incoming signals
+                and communicate through audio.
+            </p>
+        </section>
+
+
+        <section class="terminal">
+
+            <div class="terminal-header">
+                <div>
+                    <span class="terminal-symbol">◈</span>
+                    <span class="terminal-title">TRANSMISSION TERMINAL</span>
+                </div>
+
+                <span class="live-label">● LIVE</span>
+            </div>
+
+
+            <div class="mode-switch">
+                <button id="encodeMode" class="mode-button active">
+                    TEXT → MORSE
+                </button>
+
+                <button id="decodeMode" class="mode-button">
+                    MORSE → TEXT
+                </button>
+            </div>
+
+
+            <div class="field">
+                <div class="field-heading">
+                    <label id="inputLabel" for="inputText">
+                        INPUT MESSAGE
+                    </label>
+
+                    <span class="field-tag">INPUT</span>
+                </div>
+
+                <textarea
+                    id="inputText"
+                    placeholder="Type your message here..."
+                    spellcheck="false"
+                ></textarea>
+            </div>
+
+
+            <div class="field">
+                <div class="field-heading">
+                    <label>TRANSLATED MESSAGE</label>
+                    <span class="field-tag">OUTPUT</span>
+                </div>
+
+                <div id="outputText" class="output-box">
+                    Your translated message will appear here...
+                </div>
+            </div>
+
+
+            <div class="button-row">
+                <button id="clearBtn" class="button button-outline">
+                    CLEAR
+                </button>
+
+                <button id="copyBtn" class="button button-outline">
+                    COPY OUTPUT
+                </button>
+            </div>
+
+
+            <div class="transmit-row">
+                <button id="playBtn" class="button button-primary">
+                    ▶ TRANSMIT MORSE AUDIO
+                </button>
+
+                <button id="stopBtn" class="button button-danger">
+                    ■ STOP
+                </button>
+            </div>
+
+
+            <!-- VOICE OUTPUT ONLY -->
+
+            <div class="voice-panel">
+
+                <div class="panel-heading">
+                    <div class="panel-icon">◉</div>
+
+                    <div>
+                        <h3>VOICE COMMUNICATION</h3>
+                        <p>TARS AUDIO INTERFACE</p>
+                    </div>
+                </div>
+
+
+                <div class="voice-block">
+                    <label for="voiceSelect">SELECT SYSTEM VOICE</label>
+
+                    <select id="voiceSelect">
+                        <option value="">Default system voice</option>
+                    </select>
+                </div>
+
+
+                <div class="voice-block">
+                    <label>SPEECH OUTPUT</label>
+
+                    <div class="button-row">
+                        <button id="speakBtn" class="button button-primary">
+                            🔊 SPEAK ENGLISH
+                        </button>
+
+                        <button id="speakMorseBtn" class="button button-outline">
+                            SPEAK MORSE
+                        </button>
+                    </div>
+
+                    <p id="voiceStatus" class="status-text">
+                        Voice communication ready.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="visualizer">
+
+                <div id="signalBars" class="signal-bars">
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                </div>
+
+                <p id="signalStatus">
+                    AWAITING TRANSMISSION
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="info-section">
+            <h3>HOW TO USE TARS</h3>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <span>01</span>
+                    <h4>ENCODE</h4>
+                    <p>Convert English messages into Morse code.</p>
+                </div>
+
+                <div class="info-card">
+                    <span>02</span>
+                    <h4>DECODE</h4>
+                    <p>Translate Morse signals into English.</p>
+                </div>
+
+                <div class="info-card">
+                    <span>03</span>
+                    <h4>VOICE</h4>
+                    <p>Listen to English messages and Morse signals.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>TARS ARTIFICIAL INTELLIGENCE SYSTEM</p>
+        <span>COMMUNICATION IS THE KEY TO SURVIVAL</span>
+    </footer>
+
+
+    <div id="toast" class="toast"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
